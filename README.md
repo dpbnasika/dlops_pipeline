@@ -1,10 +1,10 @@
-# YOLO Pipeline
+# A time-efficient YOLO pipeline project for object detection models
 
-A full-scale, object-oriented pipeline for training, predicting, and exporting YOLO models with Firebase integration.
+A full-scale, object-oriented pipeline for data preprocessing, training, predicting, and exporting YOLO models with Firebase integration.
 
 ## Features
 
-- Firebase integration for dataset retrieval
+- Google Firebase integration for dataset retrieval
 - Automatic dataset organization and splitting
 - YOLO model training with configurable parameters
 - Model inference and export functionality
@@ -40,5 +40,15 @@ yolo_pipeline/
    ```
 
 3. Set up Firebase credentials:
-   - Create a `.env` file using the template in `.env.example`
+   - open `.env` file 
    - Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to point to your Firebase credentials JSON file
+
+4. Source the environment variables:
+   ```bash
+   source .env   
+   ```
+5. Run it using various arguments:
+   ```bash
+   python3 main.py --monitor --debug --run --test-image=test_images/strawberry.png
+   ```
+6. The results will be present in the data_storage folder under predict and you could use the .torchscript with the cpp script and libtorch library for faster inferencing.
